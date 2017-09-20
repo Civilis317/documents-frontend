@@ -1,0 +1,31 @@
+<div *ngIf="alert.message.length > 0" class="alert alert-success alert-dismissable fade in">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>OK </strong> {{alert.message}}
+</div>
+
+<div style="width: 100%; display: table;">
+
+	<div class="form-group">
+		<label for="to">To</label> 
+		<select [(ngModel)]="recipient"	class="form-control" style="max-width: 30%;">
+			<option *ngFor="let recip of recipients" [ngValue]="recip">{{recip.displayName}}</option>
+		</select>
+	</div>
+	
+	<div class="form-group">
+		<label for="subject">Subject</label> 
+		<input type="text" name="subject" id="subject" [(ngModel)]="subject" class="form-control" required />
+	</div>
+	
+	<div class="form-group">
+		<label for="msg">Message</label>
+		<textarea rows="6" cols="10" name="msg" id="msg" [(ngModel)]="msg" class="form-control"></textarea>
+	</div>
+	
+	<div class="form-group">
+		<button class="btn btn-md btn-primary" (click)="sendMsg()">Send</button>
+	</div>
+	
+	
+</div>
+

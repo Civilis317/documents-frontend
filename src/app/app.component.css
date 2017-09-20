@@ -1,0 +1,4 @@
+.panel-resizable {
+	resize: both;
+	overflow: auto
+}

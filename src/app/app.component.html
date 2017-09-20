@@ -1,0 +1,26 @@
+<div class="panel panel-primary panel-resizable" style="width: 70%; height: 70%">
+  <div class="panel-heading">{{title}}</div>
+  <div class="panel-body">
+  
+	 <nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" routerLink="/" title="Minimize"><span class="glyphicon glyphicon-eye-close"></span></a>
+	    </div>
+	    <ul class="nav navbar-nav">
+	    	<li [routerLinkActive]="['active']"><a routerLink="/documentlist" title="Show documents in your inbox"><span class="glyphicon glyphicon-th-list"></span> Inbox</a></li>
+	    	<li [routerLinkActive]="['active']"><a routerLink="/createResponse" title="Create a response for BOIP"><span class="glyphicon glyphicon-pencil"></span> Respond</a></li>
+	    </ul>
+	    <ul class="nav navbar-nav navbar-right">
+	      <li *ngIf="!authenticated"><a routerLink="/fake-sso" title="Enter a security token"><span class="glyphicon glyphicon-wrench"></span> Emulate SSO</a></li>
+	      <li *ngIf="!authenticated"><a routerLink="/login" title="Create a new session"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	      <li *ngIf="authenticated"><a routerLink="/" (click)="logout()" title="End your session"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+	    </ul>
+	  </div>
+	</nav> 
+
+<router-outlet></router-outlet>
+
+  </div>
+</div>
+

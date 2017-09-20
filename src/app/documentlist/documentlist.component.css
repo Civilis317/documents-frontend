@@ -1,0 +1,12 @@
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover {
+  background-color: #ffffcc;
+  cursor: pointer;
+}
+/*
+.table-hover thead tr:hover td, .table-hover thead tr:hover {
+	background-color: red;
+}
+*/
+.table-condensed {
+  font-size: 12px;
+}
