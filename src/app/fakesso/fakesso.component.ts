@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import {AuthPubSubService} from '../services/auth-pub-sub.service';
 
 @Component({
@@ -9,16 +9,28 @@ import {AuthPubSubService} from '../services/auth-pub-sub.service';
 })
 export class FakessoComponent implements OnInit {
   jwt: string;
-
-  constructor(private router: Router, private authPubSubService: AuthPubSubService) { }
+  private showLoginSection: boolean = true;
+  
+  constructor(private router: Router, private authPubSubService: AuthPubSubService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+      this.route.params.subscribe((param: any) => {
+      this.showLoginSection = true;
+      let id: number = parseInt(param.id);
+      console.log(id)
+    });
   }
   
   setToken() {
     localStorage.setItem('authToken', this.jwt);
     this.authPubSubService.Authenticated.next(true);
+    this.showLoginSection = false;
     this.router.navigate(['/documentlist']);
   }
-
+  
+  hideSection() {
+    this.showLoginSection = false;
+    this.authPubSubService.Dummy.next(Date.now());
+  }
+  
 }

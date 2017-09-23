@@ -1,26 +1,100 @@
-<div class="panel panel-primary panel-resizable" style="width: 70%; height: 70%">
-  <div class="panel-heading">{{title}}</div>
-  <div class="panel-body">
-  
-	 <nav class="navbar navbar-default">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <a class="navbar-brand" routerLink="/" title="Minimize"><span class="glyphicon glyphicon-eye-close"></span></a>
-	    </div>
-	    <ul class="nav navbar-nav">
-	    	<li [routerLinkActive]="['active']"><a routerLink="/documentlist" title="Show documents in your inbox"><span class="glyphicon glyphicon-th-list"></span> Inbox</a></li>
-	    	<li [routerLinkActive]="['active']"><a routerLink="/createResponse" title="Create a response for BOIP"><span class="glyphicon glyphicon-pencil"></span> Respond</a></li>
-	    </ul>
-	    <ul class="nav navbar-nav navbar-right">
-	      <li *ngIf="!authenticated"><a routerLink="/fake-sso" title="Enter a security token"><span class="glyphicon glyphicon-wrench"></span> Emulate SSO</a></li>
-	      <li *ngIf="!authenticated"><a routerLink="/login" title="Create a new session"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-	      <li *ngIf="authenticated"><a routerLink="/" (click)="logout()" title="End your session"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-	    </ul>
-	  </div>
-	</nav> 
 
-<router-outlet></router-outlet>
 
-  </div>
-</div>
+<section class="section-main-container">
+	<div class="no-border-section">
+		<img src="../assets/logo-en.png"/>
+		<br/>
+		<br/>
+		<br/>
+		<div class="border-section">
+		
+		<div class="btn-row clean-row align-left">
+			<ul style="width: 80%; float: left;">
+				<li>
+					<h1 class="ic-comm">Communication module</h1>
+				</li>
+			</ul>
+			<ul style="width: 20%; float: right;">
+				<li *ngIf="!authenticated">
+					<a [routerLink]="[{ outlets: { 'aux': ['fake-sso', this.dummy] } }]" title="Enter a security token" class="btn-clean"><span>Emulate SSO</span></a>
+				</li>
+				<li *ngIf="!authenticated">
+					<a [routerLink]="[{ outlets: { 'aux': ['login', this.dummy ] } }]" title="Create a new session" class="btn-clean"><span>Login</span></a>
+				</li>
+				<li *ngIf="authenticated">
+					<a routerLink="/" (click)="logout()" title="End your session" class="btn-clean"><span>Logout</span></a>
+					
+				</li>
+			</ul>
+		
+		</div>
+		</div>
+		
+		<router-outlet name="aux"></router-outlet>
+
+		<div class="border-section solid-grey space">
+
+		<div class="btn-row clean-row align-left">
+			<ul style="width: 80%; float: left;">
+				<li>
+					<a routerLink="/" title="Minimize" class="btn-clean"><span class="glyphicon glyphicon-off">&nbsp;</span></a>
+				</li>
+				<li>
+					<a routerLink="/documentlist" title="Show documents in your inbox" class="btn-base coloured view-icon"><span>Inbox</span></a>
+				</li>
+				<li>
+					<a routerLink="/createResponse" title="Create a response for BOIP" class="btn-base coloured edit-icon"><span>Respond</span></a>
+				</li>
+			</ul>
+		</div>
+
+		<router-outlet></router-outlet>
+
+		</div>
+		
+		
+		
+<div class="border-coloured-corner">
+				<ul class="options-list">
+					<li>
+						<a href="" class="ic-load">Importeer eerder opgeslagen aanvraag (XML)</a>
+					</li>
+					<li>
+						<a href="" class="ic-save">Exporteer aanvraag (als XML)</a>
+					</li>
+					<li>
+						<a href="" class="ic-reset">Aanvraag resetten</a>
+					</li>
+					<li>
+						<a href="" class="ic-print">Printen</a>
+					</li>
+				</ul>
+			</div>		
+<div class="inline-error-message">
+							<p>Donec sit amet libero et ipsum mollis bibendum. Curabitur eu lectus magna. Duis eu neque nulla. Phasellus et felis sit amet massa pellentesque imperdiet sed non odio. Suspendisse mi arcu, tincidunt ut lacus ut, faucibus tincidunt massa. Nulla interdum nibh eget lorem porta</p>
+							<p>Donec sit amet libero et ipsum mollis bibendum. Curabitur eu lectus magna. Duis eu neque nulla. Phasellus et felis sit amet massa pellentesque imperdiet sed non odio. Suspendisse mi arcu, tincidunt ut lacus ut, faucibus tincidunt massa. Nulla interdum nibh eget lorem porta</p>
+							<ul>
+								<li>Donec sit amet libero et ipsum mollis bibendum.</li>
+								<li>Curabitur eu lectus magna.</li>
+								<li>Duis eu neque nulla. Phasellus et felis sit amet massa pellentesque imperdiet sed non odio. Suspendisse mi arcu, tincidunt ut lacus ut, faucibus tincidunt massa. Nulla interdum nibh</li>
+								<li>Peget lorem porta</li>
+							</ul>
+							<p>Donec sit amet libero et ipsum mollis bibendum. Curabitur eu lectus magna. Duis eu neque nulla. Phasellus et felis sit amet massa pellentesque imperdiet sed non odio. Suspendisse mi arcu, tincidunt ut lacus ut, faucibus tincidunt massa. Nulla interdum nibh eget lorem porta</p>
+							<ol>
+								<li>Donec sit amet libero et ipsum mollis bibendum.</li>
+								<li>Curabitur eu lectus magna.</li>
+								<li>Duis eu neque nulla. Phasellus et felis sit amet massa pellentesque imperdiet sed non odio. Suspendisse mi arcu, tincidunt ut lacus ut, faucibus tincidunt massa. Nulla interdum nibh</li>
+								<li>Peget lorem porta</li>
+								<li>Lorem porta</li>
+								<li>Peget ta</li>
+								<li>Peget lorem porta</li>
+								<li>Peem porta</li>
+								<li>Lorum lorem porta ipsumus</li>
+								<li>Lorem porta</li>
+							</ol>
+						</div>		
+		
+	</div>
+	<div id="modalContainer" class="modal-container"></div>
+</section>
 

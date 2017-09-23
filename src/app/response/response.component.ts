@@ -29,7 +29,7 @@ export class ResponseComponent implements OnInit {
     this.documentService.sendMsg(token,this.recipient.username, this.subject, this.msg)
           .then((data: string) => {
             console.log(data);
-            this.alert.error = "Ok.";
+            this.alert.error = "ok";
             this.alert.message = "The Message has been sent";
           });
   }

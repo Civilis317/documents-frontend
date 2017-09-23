@@ -20,7 +20,10 @@
       "prefix": "app",
       "styles": [
     	"../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "styles.css"
+        "styles.css",
+        "../_css/main.css",
+        "../_css/bbie-template.css",
+        "../_css/jquery.qtip.css"
       ],
       "scripts": [
           "../node_modules/jquery/dist/jquery.min.js",

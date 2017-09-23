@@ -12,7 +12,7 @@ export class DocumentService {
   constructor(private http: Http) {}
 
   getDocument(token: string, docId: string): Promise<any> {
-    let url: string = environment.alfresco_client_url + '/document/' + docId;
+    const url: string = `${environment.alfresco_client_url}/document/${docId}`;
     let options = new RequestOptions({
       headers: new Headers({
         'Authorization': `${token}`
@@ -29,8 +29,7 @@ export class DocumentService {
   }
 
   getDocumentList(token: string): Promise<any> {
-    console.log(`token: ${token}`)
-    let url: string = environment.alfresco_client_url + '/documents/';
+    const url: string =`${environment.alfresco_client_url}/documents/`;
     let options = new RequestOptions({
       headers: new Headers({
         'Authorization': `${token}`
@@ -44,7 +43,7 @@ export class DocumentService {
   }
   
   sendMsg(token: string, recipient: string, subject: string, msgBody: string): Promise<string> {
-    let url = environment.alfresco_client_url + '/send-message';
+    const url = `${environment.alfresco_client_url}/send-message`;
     let options = new RequestOptions({
       headers: new Headers({
         'Authorization': `${token}`

@@ -1,18 +1,46 @@
-<div *ngIf="alert.message.length > 0" class="alert alert-danger alert-dismissable fade in">
-  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  <strong>{{alert.error}}!&nbsp;</strong> {{alert.message}}
-</div>
+<div *ngIf="showLoginSection" class="border-section" style="width: 90%;">
+	<span>
+	<h2>
+		<a style="cursor: pointer;" (click)="hideSection()" title="Hide this window" class="btn-clean"><span class="glyphicon glyphicon-off">&nbsp;</span></a> 
+		Login to MyBOIP
+	</h2>
+	</span>
+	
 
-<div style="width: 40%">
-     <div class="form-group">
-         <label for="username">Username</label>
-         <input type="text" name="username" id="username" [(ngModel)]="username" class="form-control" required autofocus/>
-     </div>
-     <div class="form-group">
-         <label for="password">Password</label>
-         <input type="password" name="password" id="password" [(ngModel)]="password" class="form-control" />
-     </div>
-     <div class="form-group">
-         <button class="btn btn-md btn-primary" (click)="performLogin()">Login</button>
-     </div>
+	<div *ngIf="alert.message.length > 0" class="full-coloured-corner">
+		<section class="error-message">
+			<h2>
+			Error message 
+			<a (click)="hideErrorPanel()" class="download-icon" style="cursor: pointer; float: right;"><span class="glyphicon glyphicon-remove">&nbsp;</span></a>
+			</h2>
+			<p>Please correct the following errors:</p>
+			<dl>
+				<dt>{{alert.error}}</dt>
+				<dd>{{alert.message}}</dd>
+			</dl>
+		</section>
+	</div>
+
+
+	<div class="wrapper">
+		<div class="no-border-section" style="width: 40%; padding-left: 10%;">     
+			<div class="form-element-row">
+		        <label for="username">Username</label>
+		        <input type="text" name="username" id="username" [(ngModel)]="username" class="size-l" autofocus/>
+		    </div>
+		    <div class="form-element-row">
+		        <label for="password">Password</label>
+		        <input type="password" name="password" id="password" [(ngModel)]="password" class="size-l" />
+		    </div>
+		    <div class="form-element-row">
+			    <div class="btn-row clean-row align-left">
+					<ul>
+						<li>
+							<a (click)="performLogin()" class="btn-base coloured"><span>Login</span></a>
+						</li>
+				    </ul>
+			    </div>
+		    </div>
+		</div>
+	</div>
 </div>

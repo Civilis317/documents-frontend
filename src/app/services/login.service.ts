@@ -11,7 +11,7 @@ export class LoginService {
   constructor(private http: Http) {}
 
   login(username: string, password: string): Promise<string> {
-    let url = environment.alfresco_client_url + '/login';
+    const url: string = `${environment.alfresco_client_url}/login`;
     let data = `{"username": "${username}", "password": "${password}" }`;
     
     return this.http.post(url, data)
@@ -21,7 +21,7 @@ export class LoginService {
   }
   
   logout(token: string): Promise<string> {
-    let url = environment.alfresco_client_url + '/destroy-session';
+    const url = `${environment.alfresco_client_url}/destroy-session`;
     let options = new RequestOptions({
       headers: new Headers({
         'Authorization': `${token}`

@@ -11,8 +11,9 @@ import { DocumentlistComponent } from './documentlist/documentlist.component';
 import { ResponseComponent } from './response/response.component';
 
 const routes: Routes = [
-  {path: 'login', component: LoginComponent},
-  {path: 'fake-sso', component: FakessoComponent},
+  {path: 'login', component: LoginComponent, outlet: 'aux'},
+  {path: 'login/:id', component: LoginComponent, outlet: 'aux'},
+  {path: 'fake-sso/:id', component: FakessoComponent, outlet: 'aux'},
   {path: 'createResponse', component: ResponseComponent},
   {path: 'documentlist', component: DocumentlistComponent},
   {path: 'documentlist/:token', component: DocumentlistComponent}

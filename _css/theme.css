@@ -1,0 +1,533 @@
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600);
+
+/** BRON: theme.css **/
+html {
+    height:100%;
+}
+
+html body {
+    position: relative;
+    min-width:768px;
+    min-height: 100%;
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: normal;
+    line-height:normal;
+    color: #011526;
+    padding:0 0 214px 0;
+    margin:0;
+    background:#fff;
+    background: -moz-linear-gradient(left,  #e5e5e5 0%, #e5e5e5 100%), #ffffff;
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#e5e5e5), color-stop(100%,#e5e5e5)), #ffffff;
+    background: -webkit-linear-gradient(left,  #e5e5e5 0%,#e5e5e5 100%), #ffffff;
+    background: -o-linear-gradient(left,  #e5e5e5 0%,#e5e5e5 100%), #ffffff;
+    background: -ms-linear-gradient(left,  #e5e5e5 0%,#e5e5e5 100%), #ffffff;
+    background: linear-gradient(to right,  #e5e5e5 0%,#e5e5e5 100%), #ffffff;
+
+    background-repeat:no-repeat;
+    background-size:55px 100000px;
+
+    -webkit-transition: all 100ms linear;
+    -moz-transition: all 100ms linear;
+    -o-transition: all 100ms linear;
+    -ms-transition: all 100ms linear;
+    transition: all 100ms linear;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body .center > header,
+body .center > footer {
+	font-family: "Titillium Web",sans-serif;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+body.menu-is-hidden {
+    background:#fff;
+}
+
+body.menu-is-visible,
+body.acc.menu-is-visible,
+body.test.menu-is-visible {
+    background-size:200px 100000px;
+}
+body .center > .main-app-container::after,
+body .center > .main-app-container > .main-app-fluid::after {
+    content:".";
+    display:block;
+    height:0px;
+    clear:both;
+    visibility:hidden;
+}
+
+body .center > header,
+body .center > header *,
+body .center > footer,
+body .center > footer *,
+body .center > .main-app-container > nav,
+body .center > .main-app-container > nav * {
+    padding:0;
+    margin:0;
+}
+body .center > header ul,
+body .center > footer ul,
+body .center > .main-app-container > nav ul {
+    list-style-type:none;
+}
+
+body .center > header {
+    position:relative;
+    height:48px;
+    color:#011526;
+    background:#e5e5e5;
+}
+body .center > header .customer {
+	padding: 0 0 0 65px;
+    -webkit-transition: all 100ms linear, background-position 1ms linear;
+    -moz-transition: all 100ms linear, background-position 1ms linear;
+    -o-transition: all 100ms linear, background-position 1ms linear;
+    -ms-transition: all 100ms linear, background-position 1ms linear;
+}
+body.menu-is-visible .center > header .customer {
+	padding: 0 0 0 215px;
+}
+body .center > header .customer div {
+    float:left;
+    font-size:14px;
+    padding:16px 0 0 20px;
+}
+body .center > header .customer div:first-child {
+	font-size: 20px;
+	font-weight: 300;
+	padding:9px 0 0 20px;
+}
+body .center > header .customer strong {
+	font-weight: 600;
+}
+
+body .center > header .logo a {
+    position:absolute;
+    top:0;
+    left:0;
+    display:block;
+    width:55px;
+    height:63px;
+	font-size: 14px;
+	padding-left: 20px;
+	line-height: 62px;
+	font-weight: 600;
+    text-indent:-999px;
+	color: #fff;
+	text-decoration: none;
+	overflow:hidden;
+	background: #008fd6;
+
+    -webkit-transition: all 100ms linear, background-position 8000ms linear;
+    -moz-transition: all 100ms linear, background-position 8000ms linear;
+    -o-transition: all 100ms linear, background-position 8000ms linear;
+    -ms-transition: all 100ms linear, background-position 8000ms linear;
+    
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body.menu-is-visible .center > header .logo a {
+    width:200px;
+	text-indent: 0;
+}
+
+body .center > header .logo a::after {
+    content: "";
+    position: relative;
+    float: right;
+    width: 55px;
+    height: 63px;
+    background:url(../_img/Logo-my-boip.svg?v=21) no-repeat right 0;
+	background-size: 55px 63px;
+    -webkit-transition: all 100ms linear, background-position 1ms linear;
+    -moz-transition: all 100ms linear, background-position 1ms linear;
+    -o-transition: all 100ms linear, background-position 1ms linear;
+    -ms-transition: all 100ms linear, background-position 1ms linear;
+}
+
+body .center > header .account-menu {
+    padding:0 12px 0 0;
+    float:right;
+}
+
+body .center > header .account-menu li {
+    position:relative;
+}
+body .center > header .account-menu li span {
+    display:block;
+    height:31px;
+	font-size: 13px;
+    color:#011526;
+    padding:17px 20px 0 0;
+    text-align:center;
+    text-decoration:none;
+    cursor:default;
+}
+body .center > header .account-menu li:hover span {
+    color:#008fd6;
+}
+body .center > header .account-menu li span::after {
+    content: "";
+    position: absolute;
+    top:25px;
+    right:0;
+    width: 13px;
+    height: 7px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-image:url(../_img/account-menu.png?v=21); /** sprite-ref: mysprite; sprite-margin-left: 0px ;  sprite-margin-top: 0px; sprite-margin-bottom: 5px */
+}
+body .center > header .account-menu li:hover span::after {
+    background-image:url(../_img/account-menu-h.png?v=21); /** sprite-ref: mysprite; sprite-margin-left: 0px ;  sprite-margin-top: 0px; sprite-margin-bottom: 5px */
+}
+
+
+body .center > header .account-menu li ul {
+    display:none;
+    position:absolute;
+    top:48px;
+    right:-50%;
+    min-width:180px;
+    padding:14px 0 17px 0;
+    background:#003f79;
+    z-index:1;
+}
+body .center > header .account-menu li:hover ul {
+    display:block;
+}
+body .center > header .account-menu li li a {
+    display:block;
+    color:#fff;
+	font-size: 14px;
+	font-weight: 600;
+    text-decoration:none;
+	line-height: 15px;
+    padding:12px 30px 13px;
+}
+body .center > header .account-menu li li a:hover {
+    color:#008fd6;
+}
+
+body .center > header .language-selector {
+	position: relative;
+    padding:13px 24px 0 0;
+    float:right;
+	z-index: 10;
+}
+body .center > header .language-selector li {
+    float:left;
+    padding:0 0 0 8px;
+}
+
+body .center > header .language-selector li span,
+body .center > header .language-selector li a {
+    display:block;
+    width:29px;
+    height:34px;
+    color:#011526;
+    padding:5px 0 0 0;
+    text-align:center;
+    text-decoration:none;
+
+    -webkit-transition: all 100ms linear;
+    -moz-transition: all 100ms linear;
+    -o-transition: all 100ms linear;
+    -ms-transition: all 100ms linear;
+    transition: all 100ms linear;
+}
+body .center > header .language-selector li.select span {
+    color:#fff;
+   background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIxLjEuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAzNCA0NSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzQgNDU7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZGlzcGxheTpub25lO30KCS5zdDF7ZGlzcGxheTppbmxpbmU7ZmlsbDojQjJCNEIzO30KCS5zdDJ7ZGlzcGxheTppbmxpbmU7ZmlsbDojRDcyNDE4O30KCS5zdDN7ZGlzcGxheTppbmxpbmU7ZmlsbDojMDA1MTkxO30KCS5zdDR7ZmlsbDojMDA4RkQ2O30KPC9zdHlsZT4KPGcgaWQ9ImdyZXkiIGNsYXNzPSJzdDAiPgoJPHBhdGggY2xhc3M9InN0MSIgZD0iTTM0LDE3YzAsOS40LTE3LDI4LTE3LDI4UzAsMjYuNCwwLDE3UzcuNiwwLDE3LDBTMzQsNy42LDM0LDE3eiIvPgo8L2c+CjxnIGlkPSJyZWQiIGNsYXNzPSJzdDAiPgoJPHBhdGggY2xhc3M9InN0MiIgZD0iTTM0LDE3YzAsOS40LTE3LDI4LTE3LDI4UzAsMjYuNCwwLDE3UzcuNiwwLDE3LDBTMzQsNy42LDM0LDE3eiIvPgo8L2c+CjxnIGlkPSJibHVlIiBjbGFzcz0ic3QwIj4KCTxwYXRoIGNsYXNzPSJzdDMiIGQ9Ik0zNCwxN2MwLDkuNC0xNywyOC0xNywyOFMwLDI2LjQsMCwxN1M3LjYsMCwxNywwUzM0LDcuNiwzNCwxN3oiLz4KPC9nPgo8ZyBpZD0ieWVsbG93Ij4KCTxwYXRoIGNsYXNzPSJzdDQiIGQ9Ik0zNCwxN2MwLDkuNC0xNywyOC0xNywyOFMwLDI2LjQsMCwxN1M3LjYsMCwxNywwUzM0LDcuNiwzNCwxN3oiLz4KPC9nPgo8L3N2Zz4K");
+}
+body .center > header .language-selector li a:hover {
+    color:#008fd6;
+}
+
+body .center > footer {
+    position:absolute;
+    right:0;
+    bottom:0;
+    left:0;
+    min-height:190px;
+    color:#fff;
+    background:#008fd6;
+
+    -webkit-transition: all 100ms linear;
+    -moz-transition: all 100ms linear;
+    -o-transition: all 100ms linear;
+    -ms-transition: all 100ms linear;
+    transition: all 100ms linear;
+}
+body.menu-is-visible .center > footer {
+    background-size:200px 100000px;
+}
+
+body .center > footer .home {
+    position:absolute;
+    bottom:25px;
+    left:46px;
+    width:107px;
+    height:150px;
+    background:no-repeat 0 bottom;
+	z-index: 10;
+}
+body.locale-nl .center > footer .home { background-image:url(../_img/bbie-home-nl.png?v=21); }
+body.locale-fr .center > footer .home { background-image:url(../_img/bbie-home-fr.png?v=21); }
+body.locale-en .center > footer .home { background-image:url(../_img/bbie-home-en.png?v=21); }
+
+body .center > footer .home a {
+    display:block;
+    width:107px;
+    height:150px;
+    text-indent:-999px;
+    overflow:hidden;
+}
+body .center > footer ul {
+    position:relative;
+    padding:135px 20px 0 0;
+    text-align:right;
+
+    -webkit-transition: all 100ms linear;
+    -moz-transition: all 100ms linear;
+    -o-transition: all 100ms linear;
+    -ms-transition: all 100ms linear;
+    transition: all 100ms linear;
+    z-index:1;
+}
+/*
+body.menu-is-visible .center > footer ul {
+    padding:15px 0 0 200px;
+}
+*/
+body .center > footer li {
+    display:inline;
+}
+body .center > footer li a {
+    display:inline-block;
+    font-size:14px;
+	font-weight: 600;
+    color:#fff;
+    padding:10px 10px;
+    text-decoration:none;
+}
+body .center > footer li a:hover {
+    text-decoration:underline;
+}
+
+body .center > .main-app-container {
+    min-height:48px;
+    background:#fff;
+    background: -moz-linear-gradient(left,  #e5e5e5 0%, #e5e5e5 100%), #fff;
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#e5e5e5), color-stop(100%,#e5e5e5)), #fff;
+    background: -webkit-linear-gradient(left,  #e5e5e5 0%,#e5e5e5 100%), #fff;
+    background: -o-linear-gradient(left,  #e5e5e5 0%,#e5e5e5 100%), #fff;
+    background: -ms-linear-gradient(left,  #e5e5e5 0%,#e5e5e5 100%), #fff;
+    background: linear-gradient(to right,  #e5e5e5 0%,#e5e5e5 100%), #fff;
+
+    background-repeat:no-repeat;
+    background-size:55px 100000px;
+
+    -webkit-transition: all 100ms linear;
+    -moz-transition: all 100ms linear;
+    -o-transition: all 100ms linear;
+    -ms-transition: all 100ms linear;
+    transition: all 100ms linear;
+}
+
+body.menu-is-visible .center > .main-app-container {
+    background-size:200px 100000px;
+}
+
+body.menu-is-hidden .center > .main-app-container > nav { display:none; }
+body.menu-is-hidden,
+body.menu-is-hidden > .center,
+body.menu-is-hidden .center > .main-app-container { background-image:none; }
+body.menu-is-hidden .center > .main-app-container > .main-app-fluid { padding:30px 30px 10px; }
+
+body .center > .main-app-container > nav {
+    float:left;
+    padding:15px 0 40px;
+}
+body .center .main-app-container .account-menu ul li {
+    overflow:hidden;
+}
+
+body .center > .main-app-container > nav span,
+body .center > .main-app-container > nav a {
+    position:relative;
+    display:block;
+    width:62px;
+    height:54px;
+    padding:18px 10px 18px 20px;
+    font-size:14px;
+    color:#011526;
+    text-indent:-999px;
+    overflow:hidden;
+    cursor:pointer;
+    text-decoration:none;
+    border-bottom:1px solid rgba(255,255,255,0.5);
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    -webkit-transition: all 100ms linear, background-position 1ms linear;
+    -moz-transition: all 100ms linear, background-position 1ms linear;
+    -o-transition: all 100ms linear, background-position 1ms linear;
+    -ms-transition: all 100ms linear, background-position 1ms linear;
+}
+body .center > .main-app-container > nav span {
+    height:54px;
+	background: url(../_img/ic-nav-hamburger.png?v=21) no-repeat right 0;
+}
+body.menu-is-visible .center > .main-app-container > nav span {
+	background: url(../_img/ic-nav-hamburger-close.png?v=21) no-repeat right 0;
+}
+body .center > .main-app-container > nav span:hover,
+body .center > .main-app-container > nav .select span,
+body .center > .main-app-container > nav a:hover,
+body .center > .main-app-container > nav li .select a {
+    color:#008fd6;
+}
+body .center > .main-app-container > nav span,
+body .center > .main-app-container > nav a {
+    background-position:right 0;
+    background-repeat:no-repeat;
+}
+body .center > .main-app-container > nav .select a,
+body .center > .main-app-container > nav a:hover,
+body .center > .main-app-container > nav span:hover {
+    background-position:right -150px;
+    background-repeat:no-repeat;
+}
+
+body .center > .main-app-container > nav .select span::after,
+body .center > .main-app-container > nav li .select a::after {
+    content: "";
+    position: absolute;
+    top:21px;
+    right:0;
+
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 0 6px 7px;
+    border-color: transparent #e5e5e5 transparent
+}
+
+body.menu-is-visible .center > .main-app-container > nav span,
+body.menu-is-visible .center > .main-app-container > nav a {
+    width:207px;
+    height:auto;
+    min-height:54px;
+    padding:18px 45px 18px 20px;
+    text-indent:0;
+    overflow:visible;
+}
+body.acc .center > .main-app-container > .main-app-fluid::before,
+body.test .center > .main-app-container > .main-app-fluid::before,
+body.local .center > .main-app-container > .main-app-fluid::before{
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    bottom: 226px;
+    content: "";
+    display: block;
+    width: 10px;
+    border-radius: 5px;
+    background:#bbffcc;
+}
+body.test .center > .main-app-container > .main-app-fluid::before {
+    background:#ff5555;
+}
+body.local .center > .main-app-container > .main-app-fluid::before {
+    background:#ddd;
+}
+body .center > .main-app-container > .main-app-fluid {
+    padding:30px 30px 10px 85px;
+    -webkit-transition: all 100ms linear;
+    -moz-transition: all 100ms linear;
+    -o-transition: all 100ms linear;
+    -ms-transition: all 100ms linear;
+    transition: all 100ms linear;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body.menu-is-visible .center > .main-app-container > .main-app-fluid {
+    padding:30px 30px 10px 230px;
+
+}
+
+body .center > .main-app-container > .main-app-fluid > .main-app {
+    float:left;
+    width:100%;
+}
+
+@media screen and (min-width: 1000px) {
+    html body {
+        height:100%;
+        padding:0;
+    }
+    html body,
+    html body.acc,
+    html body.test,
+    html body.menu-is-hidden,
+    html body.menu-is-hidden.acc,
+    html body.menu-is-hidden.test {
+        background:#f8f8f8;
+    }
+
+    body > .center {
+        position:relative;
+        max-width:1100px;
+        min-height:100%;
+        padding:0 0 214px 0;
+        margin:0 auto;
+        background:#ffffff;
+        background: -moz-linear-gradient(left,  #e5e5e5 0%, #e5e5e5 100%), #ffffff;
+        background: -webkit-gradient(linear, left top, right top, color-stop(0%,#e5e5e5), color-stop(100%,#e5e5e5)), #ffffff;
+        background: -webkit-linear-gradient(left,  #e5e5e5 0%,#e5e5e5 100%), #ffffff;
+        background: -o-linear-gradient(left,  #e5e5e5 0%,#e5e5e5 100%), #ffffff;
+        background: -ms-linear-gradient(left,  #e5e5e5 0%,#e5e5e5 100%), #ffffff;
+        background: linear-gradient(to right,  #e5e5e5 0%,#e5e5e5 100%), #ffffff;
+
+        background-repeat:no-repeat;
+        background-size:55px 100000px;
+
+        -webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.45);
+        -moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.45);
+        box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.45);
+
+        -webkit-transition: all 100ms linear;
+        -moz-transition: all 100ms linear;
+        -o-transition: all 100ms linear;
+        -ms-transition: all 100ms linear;
+        transition: all 100ms linear;
+
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body.menu-is-visible .center {
+        background-size:200px 100000px;
+    }
+    body > .center footer {
+        max-width:1400px;
+        margin:0 auto;
+    }
+    body.menu-is-hidden > .center {
+        background:#fff;
+    }
+}
+
+

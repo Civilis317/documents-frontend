@@ -1,0 +1,105 @@
+@CHARSET "ISO-8859-1";
+
+.wptheme2Col .wpthemeCol {
+	box-sizing: border-box;
+	float: left;
+}
+
+.wptheme2Col.wpthemeUnequal > .wpthemePrimaryContainer {
+	width: 66.6%;
+}
+
+.wptheme2Col.wpthemeUnequal > .wpthemeSecondaryContainer  {
+	width: 33.3%;
+}
+
+.wptheme2Col > .wpthemePrimaryContainer {
+	width: 50%;
+}
+
+.wptheme2Col > .wpthemeSecondaryContainer  {
+	width: 50%;
+}
+
+
+.myBoipTabbedMainContainer > .wpthemeCol  {
+	box-sizing: border-box;
+	float: left;
+	width: 66.6%;
+}
+
+.myBoipTabbedMainContainer > .wpthemeCol.wpthemeRight  {
+	float: right;
+	width: 33.3%;
+}
+
+.myBoipTabbedMainContainer > .wpthemePrimaryContainer   {
+	display: none;
+}
+
+/* tab layout */
+.myBoipTabbedMainContainer > .wpthemePrimaryContainer ul.ui-tabs-nav {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+.myBoipTabbedMainContainer > .wpthemePrimaryContainer ul.ui-tabs-nav li {
+	background: none;
+	color: #222;
+	display: inline-block;
+	padding: 10px 15px;
+	cursor: pointer;
+}
+
+.myBoipTabbedMainContainer > .wpthemePrimaryContainer ul.ui-tabs-nav li.ui-state-active {
+	font-weight: bold;
+}
+
+.myBoipTabbedMainContainer > .wpthemePrimaryContainer ul.ui-tabs-nav li.ui-state-active a {
+	color: #000;
+	text-decoration: none;
+}
+
+.myBoipTabbedMainContainer > .wpthemePrimaryContainer .ui-tabs-panel {
+	border: 1px #e8e8e8 solid;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	background:#fff;
+	padding:0 0 20px 0;
+	margin:0 0 20px 0;
+}
+
+/** 3 columns - layout */
+.wptheme3Col .wpthemeCol {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	float:left;
+	min-height:10px;	
+}
+
+.wptheme3Col > .wpthemeTertiaryContainer,
+.wptheme3Col > .wpthemeSecondaryContainer,
+.wptheme3Col > .wpthemePrimaryContainer {
+	width:33%;
+}
+
+.wptheme3Col > .wpthemePrimaryContainer {
+	padding:0 30px;
+}
+
+.wptheme3Col.wpthemeUnequal > .wpthemeTertiaryContainer  {
+	width: 25%;
+}
+
+.wptheme3Col.wpthemeUnequal > .wpthemePrimaryContainer {
+	width: 50%;
+}
+
+.wptheme3Col.wpthemeUnequal > .wpthemeSecondaryContainer  {
+	width: 25%;
+}
+
+

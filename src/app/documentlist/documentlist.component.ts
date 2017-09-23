@@ -84,4 +84,7 @@ export class DocumentlistComponent implements OnInit {
     }); 
   }
   
+  hideErrorPanel() {
+    this.alert = {"error": "", "message": ""}; 
+  }
 }

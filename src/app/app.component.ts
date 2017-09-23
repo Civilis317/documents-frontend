@@ -12,10 +12,17 @@ import {AuthPubSubService} from './services/auth-pub-sub.service';
 export class AppComponent implements OnInit {
   private title: string = 'Correspondence Module';
   private authenticated: boolean = false;
+  private dummy: number;
   
   constructor(private router: Router, private loginService: LoginService, private authPubSubService: AuthPubSubService) { }
   
   ngOnInit(): void {
+    this.authPubSubService.Dummy.subscribe(
+      (dummy: number) => this.dummy = dummy,
+       (err) => console.error('error in DummyPubSub service'),
+        () => console.log('Complete')
+    );
+    
     this.authPubSubService.Authenticated.subscribe(
         (authenticated: boolean) => this.authenticated = authenticated,
         (err) => console.error('error in AuthPubSubService'),

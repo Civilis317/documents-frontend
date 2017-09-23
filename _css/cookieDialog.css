@@ -1,0 +1,81 @@
+#cookie-dialog,
+#cookie-dialog * {
+	padding:0;
+	margin:0;
+}
+#cookie-dialog {
+	padding:30px 200px 10px 30px;
+	color:#374d62;
+	border-bottom:1px solid #e5e5e5;
+    background:#aaa;
+}
+#cookie-dialog .cookie-text {
+
+}
+#cookie-dialog .cookie-text p {
+	line-height:18px;
+	padding:0 0 20px 0;
+}
+#cookie-dialog .cookie-text p a {
+    color: #374d62;
+	text-decoration:underline;
+}
+#cookie-dialog .cookie-text p a:hover {
+    color: #5b738b;
+}
+
+#cookie-dialog .action-bar::after {
+		content:".";
+		display:block;
+		height:0px;
+		clear:both;
+		visibility:hidden;
+	}
+#cookie-dialog .action-bar a {
+	display:none;
+	float:left;
+	color:#009ee0;
+	font-size: 12px;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 15px;
+	margin:0 10px 10px 0;
+	border:none;
+	border-radius: 3px;
+	box-sizing: border-box;
+	max-width: 100%;
+	overflow: hidden;
+	position: relative;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	background:none;
+	text-decoration:none;
+}
+	#cookie-dialog .action-bar a:hover {
+	    color: #5b738b;
+	}
+
+
+#cookie-dialog .action-bar button {
+	position:absolute;
+	top:20px;
+	right:20px;
+	cursor:pointer;
+	color:#fff;
+	font-size: 12px;
+	height: 30px;
+	line-height: 28px;
+	padding: 0 15px;
+	margin:0 0 10px 0;
+	border:none;
+	border-radius: 3px;
+	box-sizing: border-box;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	background:#009ee0;
+}
+	#cookie-dialog .action-bar button:hover {
+		background:#5b738b;
+	}

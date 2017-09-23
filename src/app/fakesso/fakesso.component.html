@@ -1,9 +1,26 @@
-<div style="width: 40%">
-     <div class="form-group">
-         <label for="jwt">Json Webtoken</label>
-         <input type="text" name="jwt" id="jwt" [(ngModel)]="jwt" class="form-control" required autofocus/>
-     </div>
-     <div class="form-group">
-         <button class="btn btn-md btn-primary" (click)="setToken()">Submit</button>
-     </div>
+<div *ngIf="showLoginSection" class="border-section" style="width: 90%;">
+	<span>
+	<h2>
+		<a style="cursor: pointer;" (click)="hideSection()" title="Hide this window" class="btn-clean"><span class="glyphicon glyphicon-off">&nbsp;</span></a> 
+		Enter security header to emulate SSO
+	</h2>
+	</span>
+
+	<div class="wrapper">
+		<div class="no-border-section" style="width: 40%; padding-left: 10%;">     
+			<div class="form-element-row">
+		        <label for="jwt">Json Webtoken</label>
+		        <input type="text" name="jwt" id="jwt" [(ngModel)]="jwt" />
+		    </div>
+		    <div class="form-element-row">
+			    <div class="btn-row clean-row align-left">
+					<ul>
+						<li>
+							<a (click)="setToken()" class="btn-base coloured"><span>Submit</span></a>
+						</li>
+				    </ul>
+			    </div>
+		    </div>
+		</div>
+	</div>
 </div>

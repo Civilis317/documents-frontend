@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import {LoginService} from '../services/login.service';
 import {AuthPubSubService} from '../services/auth-pub-sub.service';
 
@@ -13,10 +13,22 @@ export class LoginComponent implements OnInit {
   username: string;
   password: string;
   alert = { "error": "", "message": ""};
+  private showLoginSection: boolean = true;
   
-  constructor(private router: Router, private loginService: LoginService, private authPubSubService: AuthPubSubService) { }
-
+  constructor(
+    private router: Router, 
+    private loginService: LoginService, 
+    private authPubSubService: AuthPubSubService,
+    private route: ActivatedRoute
+  ) { }
+  
+ 
   ngOnInit() {
+    this.route.params.subscribe((param: any) => {
+      this.showLoginSection = true;
+      let id: number = parseInt(param.id);
+      console.log(id)
+    });
   }
   
   performLogin() {
@@ -28,6 +40,7 @@ export class LoginComponent implements OnInit {
         if (data && data.startsWith('Bearer ')) {
           localStorage.setItem('authToken', data);
           this.authPubSubService.Authenticated.next(true);
+          this.showLoginSection = false;
           this.router.navigate(['/documentlist']);
 //          this.router.navigate([`/documentlist/${token}`]);
         } else {
@@ -42,6 +55,15 @@ export class LoginComponent implements OnInit {
         this.alert.message = "Please provide valid credentials...";
       }
     );
+  }
+  
+  hideSection() {
+    this.showLoginSection = false;
+    this.authPubSubService.Dummy.next(Date.now());
+  }
+    
+  hideErrorPanel() {
+    this.alert = {"error": "", "message": ""}; 
   }
   
 }

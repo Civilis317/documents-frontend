@@ -1,29 +1,35 @@
-<div *ngIf="alert.message.length > 0" class="alert alert-success alert-dismissable fade in">
-  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  <strong>OK </strong> {{alert.message}}
+<div *ngIf="'ok' == alert.error" class="alertx alertx-success">
+  &nbsp;  {{alert.message}}
 </div>
 
-<div style="width: 100%; display: table;">
 
-	<div class="form-group">
+<div *ngIf="'ok' != alert.error">
+
+	<div class="form-element-row">
 		<label for="to">To</label> 
-		<select [(ngModel)]="recipient"	class="form-control" style="max-width: 30%;">
+		<select [(ngModel)]="recipient"	class="" style="max-width: 30%;">
 			<option *ngFor="let recip of recipients" [ngValue]="recip">{{recip.displayName}}</option>
 		</select>
 	</div>
 	
-	<div class="form-group">
+	<div class="form-element-row">
 		<label for="subject">Subject</label> 
-		<input type="text" name="subject" id="subject" [(ngModel)]="subject" class="form-control" required />
+		<input type="text" name="subject" id="subject" [(ngModel)]="subject" class="size-l"  />
 	</div>
 	
-	<div class="form-group">
+	<div class="form-element-row">
 		<label for="msg">Message</label>
-		<textarea rows="6" cols="10" name="msg" id="msg" [(ngModel)]="msg" class="form-control"></textarea>
+		<textarea rows="6" cols="10" name="msg" id="msg" [(ngModel)]="msg" class="size-l"></textarea>
 	</div>
 	
-	<div class="form-group">
-		<button class="btn btn-md btn-primary" (click)="sendMsg()">Send</button>
+	<div class="form-element-row">
+		<div class="btn-row clean-row align-left">
+			<ul>
+				<li>
+					<a (click)="sendMsg()" class="btn-base coloured" style="cursor: pointer;"><span>Send</span></a>
+				</li>
+		    </ul>
+	    </div>
 	</div>
 	
 	

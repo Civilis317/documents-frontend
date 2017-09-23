@@ -1,0 +1,190 @@
+/*
+ * qTip2 - Pretty powerful tooltips - v2.2.0
+ * http://qtip2.com
+ *
+ * Copyright (c) 2014 Craig Michael Thompson
+ * Released under the MIT, GPL licenses
+ * http://jquery.org/license
+ *
+ * Date: Mon Mar 17 2014 08:24 EDT-0400
+ * Plugins: tips viewport svg
+ * Styles: basic css3
+ */
+.qtip{
+	position: absolute;
+	left: -28000px;
+	top: -28000px;
+	display: none;
+
+	max-width: 400px;
+	min-width: 50px;
+	
+	direction: ltr;
+
+	box-shadow: none;
+	padding: 0;
+}
+
+	.qtip-content{
+		position: relative;
+		padding: 10px;
+		overflow: hidden;
+
+		text-align: left;
+		word-wrap: break-word;
+	}
+	.tooltip-content span {
+		display:inline-block;
+		padding:5px;
+		margin:0;
+		line-height:18px;
+	}
+	.border-section .form-section .tooltip-content p {
+		padding: 5px;
+	}
+	.qtip-titlebar{
+		position: relative;
+		padding: 5px 35px 5px 10px;
+		overflow: hidden;
+
+		border-width: 0 0 1px;
+		font-weight: bold;
+	}
+
+	.qtip-titlebar + .qtip-content{ border-top-width: 0 !important; }
+
+	/* Default close button class */
+	.qtip-close{
+		position: absolute;
+		right: 5px; top: 5px;
+
+		cursor: pointer;
+		outline: medium none;
+
+		width:14px;
+		height:14px;
+	}
+
+		.qtip-titlebar .qtip-close{
+			right: 4px; top: 50%;
+			margin-top: -9px;
+		}
+	
+		* html .qtip-titlebar .qtip-close{ top: 16px; } /* IE fix */
+
+		.qtip-titlebar .ui-icon,
+		.qtip-icon .ui-icon{
+			display: block;
+			text-indent: -1000em;
+			direction: ltr;
+		}
+
+/* Applied to 'focused' tooltips e.g. most recently displayed/interacted with */
+.qtip-focus{}
+
+/* Applied on hover of tooltips i.e. added/removed on mouseenter/mouseleave respectively */
+.qtip-hover{}
+
+/* Default tooltip style */
+.qtip-default {
+	border-width: 1px;
+	border-style: solid;
+
+	color: #fff;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+}
+
+	.qtip-default,
+	.qtip-default .qtip-titlebar {
+		border-color: #4a4c4b;
+		background-color: #4a4c4b;
+	}
+
+	.is-trademarks .qtip-default,
+	.is-trademarks .qtip-default .qtip-titlebar {
+		border-color: #941f19;
+		background-color: #941f19;
+	}
+	.is-designs .qtip-default,
+	.is-designs .qtip-default .qtip-titlebar {
+		border-color: #003b6e;
+		background-color: #003b6e;
+	}
+	.is-ideas .qtip-default,
+	.is-ideas .qtip-default .qtip-titlebar {
+		border-color: #b19e3c;
+		background-color: #b19e3c;
+	}
+	.is-uni .qtip-default,
+	.is-uni .qtip-default .qtip-titlebar {
+		border-color: #5b728a;
+		background-color: #5b728a;
+	}
+
+	.qtip-default .qtip-icon{
+		background:url(../_img/glyphicons-halflings-white.png) no-repeat -312px 0;
+		color: #fff;
+	}
+	
+	.qtip-default .qtip-titlebar .qtip-close{
+		border-color: #005191;
+		color: #fff;
+	}
+
+
+/* Add rounded corners to your tooltips in: FF3+, Chrome 2+, Opera 10.6+, IE9+, Safari 2+ */
+.qtip-rounded,
+.qtip-tipsy,
+.qtip-bootstrap{
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.qtip-rounded .qtip-titlebar{
+	-moz-border-radius: 4px 4px 0 0;
+	-webkit-border-radius: 4px 4px 0 0;
+	border-radius: 4px 4px 0 0;
+}
+
+/* IE9 fix - removes all filters */
+.qtip:not(.ie9haxors) div.qtip-content,
+.qtip:not(.ie9haxors) div.qtip-titlebar{
+	filter: none;
+	-ms-filter: none;
+}
+
+
+
+.qtip .qtip-tip{
+	margin: 0 auto;
+	overflow: hidden;
+	z-index: 10;
+	
+}
+
+	/* Opera bug #357 - Incorrect tip position
+	https://github.com/Craga89/qTip2/issues/367 */
+	x:-o-prefocus, .qtip .qtip-tip{
+		visibility: hidden;
+	}
+
+	.qtip .qtip-tip,
+	.qtip .qtip-tip .qtip-vml,
+	.qtip .qtip-tip canvas{
+		position: absolute;
+
+		color: #123456;
+		background: transparent;
+		border: 0 dashed transparent;
+	}
+	
+	.qtip .qtip-tip canvas{ top: 0; left: 0; }
+
+	.qtip .qtip-tip .qtip-vml{
+		behavior: url(#default#VML);
+		display: inline-block;
+		visibility: visible;
+	}

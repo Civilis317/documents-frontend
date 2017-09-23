@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+body {
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: normal;
+	color: #011526;
+	padding:20px;
+	margin:0;
+	background:#f0f0f0;
+}
+.section-main-container {
+	padding:20px 20px 0 20px;
+	border: 1px #d8d8d8 solid;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background:#fff;
+}
