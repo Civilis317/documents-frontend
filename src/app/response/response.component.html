@@ -2,6 +2,10 @@
   &nbsp;  {{alert.message}}
 </div>
 
+<div *ngIf="'error' == alert.error" class="alertx alertx-danger">
+  &nbsp;  {{alert.message}}
+</div>
+
 
 <div *ngIf="'ok' != alert.error">
 
@@ -15,6 +19,11 @@
 	<div class="form-element-row">
 		<label for="subject">Subject</label> 
 		<input type="text" name="subject" id="subject" [(ngModel)]="subject" class="size-l"  />
+	</div>
+	
+	<div class="form-element-row">
+		<label for="file-upload">File</label> 
+		<input type="file" multiple name="file-upload" id="file-upload" (change)="uploadFile($event)" placeholder="Upload file" accept=".pdf,.doc,.docx,.xls,.xlsx,.txt"  />
 	</div>
 	
 	<div class="form-element-row">

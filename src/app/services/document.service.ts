@@ -59,7 +59,26 @@ export class DocumentService {
       .catch(this.handleError);
   }
   
+  public uploadFile(token: string, payload: FormData): Promise<string> {
+        const url = `${environment.alfresco_client_url}/upload`;
+    let options = new RequestOptions({
+      headers: new Headers({
+        'Authorization': `${token}`,
+//        'Content-Type': 'multipart/form-data',
+        'Accept': 'application/json'
+      })
+    });
+    return this.http.post(url, payload, options )
+      .toPromise()
+      .then(response => response.ok)
+      .catch(this.handleError);
+    
+  }
+  
   private handleError(error: any): Promise<any> {
+    console.log('-----------')
+    console.log(JSON.stringify(error));
+        console.log('-----------')
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);
   }

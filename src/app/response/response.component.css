@@ -19,3 +19,15 @@ form-control select {
 .alertx-success .alert-link {
   color: #2b542c;
 }
+
+.alertx-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+.alertx-danger hr {
+  border-top-color: #e4b9c0;
+}
+.alertx-danger .alertx-link {
+  color: #843534;
+}
